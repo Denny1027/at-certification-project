@@ -1,0 +1,22 @@
+<main>
+  <div id="stockForm" class="container">
+    <h3>Enter the symbol of a stock to track (i.e AAPL, TSLA, GOOGL)</h3>
+    <div [formGroup]="stockForm" class="form-group">
+      <input type="text" id="stockInput" formControlName="stockInput" />
+      <button
+        type="submit"
+        [disabled]="stockForm.invalid"
+        (click)="searchSymbol()"
+      >
+        Track Stock
+      </button>
+    </div>
+  </div>
+  <div id="stockList" *ngIf="stockList?.length">
+    <app-stock-item
+      *ngFor="let item of stockList"
+      [stockItem]="item"
+      (delete)="onDeleteItem(item)"
+    ></app-stock-item>
+  </div>
+</main>

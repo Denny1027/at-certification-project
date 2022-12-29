@@ -1,0 +1,20 @@
+<main>
+  <div class="container" *ngIf="sentimentData?.symbol">
+    <h2>{{ sentimentData?.name || '' }} ({{ sentimentData?.symbol }})</h2>
+    <div *ngIf="sentimentData?.monthsData?.length">
+      <div *ngFor="let item of sentimentData?.monthsData" class="container">
+        <h3>{{ item.date | date: 'MMMM yyyy' | uppercase }}</h3>
+        <div *ngIf="item?.mspr || item?.change; else noContent">
+          <div *ngIf="item?.change">Change: {{ item.change }}</div>
+          <div *ngIf="item?.mspr">MSPR: {{ item.mspr }}</div>
+          <img [appStockImage]="item.mspr" />
+        </div>
+
+        <ng-template #noContent>
+          <p>No Data</p>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+  <button (click)="onListPage()">Back to list of stocks</button>
+</main>

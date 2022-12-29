@@ -1,0 +1,9 @@
+main {
+  display: flex;
+}
+.content {
+  flex: 1;
+}
+.item {
+  margin: 5px;
+}
