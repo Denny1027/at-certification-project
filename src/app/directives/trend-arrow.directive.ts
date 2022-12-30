@@ -13,7 +13,7 @@ export class TrendArrowDirective implements OnChanges {
   @HostBinding('style.color') color = 'grey';
   @HostBinding('style.font-size') fontSize = '100px';
 
-  @Input('appTrendArrow') value?: number = 0;
+  @Input('appTrendArrow') value = 0;
 
   constructor(private elementRef: ElementRef) {}
 
