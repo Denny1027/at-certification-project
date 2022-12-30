@@ -11,7 +11,7 @@ import {
 })
 export class StockImageDirective implements OnChanges {
   //default
-  @HostBinding('attr.src') src = 'assets/images/equal_80.png';
+  @HostBinding('attr.src') src = 'assets/images/warning_80.png';
   @HostBinding('attr.alt') alt = 'Icon by Icons8';
 
   @Input('appStockImage') value?: number = 0;
