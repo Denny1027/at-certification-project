@@ -9,7 +9,6 @@ import { AppComponent } from './app.component';
 import { SentimentPageComponent } from './views/sentiment-page/sentiment-page.component';
 import { StockPageComponent } from './views/stock-page/stock-page.component';
 import { StockItemComponent } from './widgets/stock-item/stock-item.component';
-import { StockImageDirective } from './directives/stock-image.directive';
 import { TrendArrowDirective } from './directives/trend-arrow.directive';
 
 @NgModule({
@@ -18,7 +17,6 @@ import { TrendArrowDirective } from './directives/trend-arrow.directive';
     SentimentPageComponent,
     StockPageComponent,
     StockItemComponent,
-    StockImageDirective,
     TrendArrowDirective,
   ],
   imports: [
