@@ -5,6 +5,7 @@
       <input type="text" id="stockInput" formControlName="stockInput" />
       <button
         type="submit"
+        class="primary"
         [disabled]="stockForm.invalid"
         (click)="searchSymbol()"
       >

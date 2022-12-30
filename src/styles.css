@@ -12,12 +12,23 @@
   padding: 20px;
 }
 
-.form-group {
-  * {
-    margin: 10px;
-  }
+.form-group * {
+  margin: 10px;
 }
 
 .txt-bold {
   font-weight: bold;
+}
+
+button.cta {
+  border: none;
+  color: blue;
+  background-color: transparent;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.txt-und {
+  text-decoration: underline;
 }

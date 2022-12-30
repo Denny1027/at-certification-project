@@ -28,13 +28,19 @@
       </div>
       <div [appTrendArrow]="stockItem?.changeToday"></div>
 
-      <a id="sentiment{{ stockItem?.symbol }}" (click)="onSentiment()">
+      <button
+        id="sentiment{{ stockItem?.symbol }}"
+        (click)="onSentiment()"
+        class="cta txt-und"
+      >
         Go to Social Sentiment Detail
-      </a>
+      </button>
     </div>
   </div>
   <!-- Cross -->
   <div class="">
-    <button id="remove{{ stockItem?.symbol }}" (click)="onDelete()">X</button>
+    <button id="remove{{ stockItem?.symbol }}" (click)="onDelete()" class="cta">
+      X
+    </button>
   </div>
 </main>
