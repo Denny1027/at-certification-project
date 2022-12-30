@@ -10,6 +10,7 @@ import { SentimentPageComponent } from './views/sentiment-page/sentiment-page.co
 import { StockPageComponent } from './views/stock-page/stock-page.component';
 import { StockItemComponent } from './widgets/stock-item/stock-item.component';
 import { StockImageDirective } from './directives/stock-image.directive';
+import { TrendArrowDirective } from './directives/trend-arrow.directive';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { StockImageDirective } from './directives/stock-image.directive';
     StockPageComponent,
     StockItemComponent,
     StockImageDirective,
+    TrendArrowDirective,
   ],
   imports: [
     BrowserModule,
