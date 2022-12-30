@@ -4,8 +4,8 @@
     <div [formGroup]="stockForm" class="form-group">
       <input type="text" id="stockInput" formControlName="stockInput" />
       <button
-        type="submit"
         class="primary"
+        id="trackBtn"
         [disabled]="stockForm.invalid"
         (click)="searchSymbol()"
       >
