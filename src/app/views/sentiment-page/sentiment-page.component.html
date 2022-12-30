@@ -7,7 +7,7 @@
         <div *ngIf="item?.mspr || item?.change; else noContent">
           <div *ngIf="item?.change">Change: {{ item.change }}</div>
           <div *ngIf="item?.mspr">MSPR: {{ item.mspr }}</div>
-          <img [appStockImage]="item.mspr" />
+          <div [appTrendArrow]="item.mspr"></div>
         </div>
 
         <ng-template #noContent>

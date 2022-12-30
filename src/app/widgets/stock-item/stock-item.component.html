@@ -26,7 +26,7 @@
           stockItem?.highPrice | currency: 'USD':'symbol':'1.0-2'
         }}</span>
       </div>
-      <img [appStockImage]="stockItem?.changeToday" />
+      <div [appTrendArrow]="stockItem?.changeToday"></div>
 
       <a id="sentiment{{ stockItem?.symbol }}" (click)="onSentiment()">
         Go to Social Sentiment Detail
