@@ -52,6 +52,7 @@ export class SentimentPageComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this._destroyed$.next(true);
+    this._destroyed$.complete();
   }
 
   /* A C T I O N S */

@@ -14,7 +14,7 @@ export class StockPageComponent implements OnInit, OnDestroy {
   stockForm: FormGroup;
   stockList: StockItem[] = [];
 
-  destroyed$ = new Subject();
+  private _destroyed$ = new Subject<boolean>();
 
   constructor(
     readonly stockService: StockService,
@@ -32,13 +32,13 @@ export class StockPageComponent implements OnInit, OnDestroy {
     /* N G   H O O K S*/
   }
   ngOnDestroy(): void {
-    this.destroyed$.next(true);
-    this.destroyed$.complete();
+    this._destroyed$.next(true);
+    this._destroyed$.complete();
   }
 
   ngOnInit(): void {
     this.storageService.stockListSubj
-      .pipe(takeUntil(this.destroyed$))
+      .pipe(takeUntil(this._destroyed$))
       .subscribe((sl) => {
         console.log('hello there ->', sl);
         this.stockList = sl;

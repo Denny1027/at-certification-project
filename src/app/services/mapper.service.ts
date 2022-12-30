@@ -10,10 +10,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class MapperService {
-  constructor() {}
-
   getExactSymbol(obj: SymbolResponse, symbol: string): SymbolItemResponse {
-    let founded;
+    let founded: SymbolItemResponse;
     if (obj.result.length) {
       founded = obj.result.find((sym) => sym.symbol === symbol);
     }
