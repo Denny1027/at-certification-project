@@ -1,14 +1,22 @@
 <main>
+  <button (click)="onListPage()" class="cta txt-und">
+    Back to list of stocks
+  </button>
+
   <div class="container" *ngIf="sentimentData?.symbol">
     <h2>{{ sentimentData?.name || '' }} ({{ sentimentData?.symbol }})</h2>
-    <div *ngIf="sentimentData?.monthsData?.length">
-      <div *ngFor="let item of sentimentData?.monthsData" class="container">
+    <div *ngIf="sentimentData?.monthsData?.length" class="sentimentContainer">
+      <div *ngFor="let item of sentimentData?.monthsData" class="sentimentItem">
         <h3>{{ item.date | date: 'MMMM yyyy' | uppercase }}</h3>
         <div *ngIf="item?.mspr || item?.change; else noContent">
-          <div *ngIf="item?.change">Change: {{ item.change }}</div>
-          <div *ngIf="item?.mspr">MSPR: {{ item.mspr }}</div>
-          <div [appTrendArrow]="item.mspr"></div>
+          <div *ngIf="item?.change">
+            <span class="txt-bold">Change: </span><span>{{ item.change }}</span>
+          </div>
+          <div *ngIf="item?.mspr">
+            <span class="txt-bold">MSPR: </span><span>{{ item.mspr }}</span>
+          </div>
         </div>
+        <div [appTrendArrow]="item.mspr"></div>
 
         <ng-template #noContent>
           <p>No Data</p>
@@ -16,5 +24,4 @@
       </div>
     </div>
   </div>
-  <button (click)="onListPage()">Back to list of stocks</button>
 </main>

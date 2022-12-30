@@ -1,0 +1,7 @@
+.sentimentContainer {
+  display: flex;
+}
+
+.sentimentItem {
+  width: 33%;
+}

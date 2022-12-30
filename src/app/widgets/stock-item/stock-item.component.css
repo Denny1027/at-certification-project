@@ -7,3 +7,7 @@ main {
 .item {
   margin: 5px;
 }
+
+.stockContainer {
+  display: flex;
+}

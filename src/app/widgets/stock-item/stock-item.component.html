@@ -3,38 +3,42 @@
     <h2 id="stockTitle">
       {{ stockItem?.name || '' }} ({{ stockItem?.symbol || '' }})
     </h2>
-    <div>
-      <div class="item" *ngIf="stockItem?.changeToday">
-        <span class="txt-bold">Change today: </span>
-        <span> {{ stockItem?.changeToday | percent }}</span>
-      </div>
-      <div class="item" *ngIf="stockItem?.openingPrice">
-        <span class="txt-bold">Opening price: </span>
-        <span>{{
-          stockItem?.openingPrice | currency: 'USD':'symbol':'1.0-2'
-        }}</span>
-      </div>
-      <div class="item" *ngIf="stockItem?.currentPrice">
-        <span class="txt-bold">Current price: </span>
-        <span>{{
-          stockItem?.currentPrice | currency: 'USD':'symbol':'1.0-2'
-        }}</span>
-      </div>
-      <div class="item" *ngIf="stockItem?.highPrice">
-        <span class="txt-bold">High price: </span>
-        <span>{{
-          stockItem?.highPrice | currency: 'USD':'symbol':'1.0-2'
-        }}</span>
-      </div>
-      <div [appTrendArrow]="stockItem?.changeToday"></div>
+    <div class="stockContainer">
+      <div>
+        <div class="item" *ngIf="stockItem?.changeToday">
+          <span class="txt-bold">Change today: </span>
+          <span> {{ stockItem?.changeToday | number: '1.0-2' }}%</span>
+        </div>
+        <div class="item" *ngIf="stockItem?.openingPrice">
+          <span class="txt-bold">Opening price: </span>
+          <span>{{
+            stockItem?.openingPrice | currency: 'USD':'symbol':'1.0-2'
+          }}</span>
+        </div>
+        <div class="item" *ngIf="stockItem?.currentPrice">
+          <span class="txt-bold">Current price: </span>
+          <span>{{
+            stockItem?.currentPrice | currency: 'USD':'symbol':'1.0-2'
+          }}</span>
+        </div>
+        <div class="item" *ngIf="stockItem?.highPrice">
+          <span class="txt-bold">High price: </span>
+          <span>{{
+            stockItem?.highPrice | currency: 'USD':'symbol':'1.0-2'
+          }}</span>
+        </div>
 
-      <button
-        id="sentiment{{ stockItem?.symbol }}"
-        (click)="onSentiment()"
-        class="cta txt-und"
-      >
-        Go to Social Sentiment Detail
-      </button>
+        <button
+          id="sentiment{{ stockItem?.symbol }}"
+          (click)="onSentiment()"
+          class="cta txt-und"
+        >
+          Go to Social Sentiment Detail
+        </button>
+      </div>
+      <div>
+        <div [appTrendArrow]="stockItem?.changeToday"></div>
+      </div>
     </div>
   </div>
   <!-- Cross -->
